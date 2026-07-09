@@ -1,0 +1,204 @@
+/* Card */
+
+.custom__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 0.9rem;
+  margin-bottom: 0.75rem;
+
+  background-color: var(--card-color);
+  color: var(--text-color);
+
+  border: 1px solid var(--card-box-shadow);
+  border-radius: 12px;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Card hover */
+
+.custom__card:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--accent);
+
+  box-shadow: var(--shadow-md);
+
+  transition: all 0.25s ease;
+}
+
+/* Card Header */
+
+.card__text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card__text p {
+  flex: 1;
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+
+  color: var(--text-color);
+
+  word-break: break-word;
+}
+
+/* Card Actions */
+
+.card__more {
+  padding: 4px;
+  border-radius: 6px;
+
+  color: var(--text-muted);
+  opacity: .75;
+
+  transition: all .2s ease;
+}
+
+.card__more:hover {
+  opacity: 1;
+  color: var(--text-color);
+  background: var(--task-hover);
+  transform: rotate(90deg);
+}
+
+/* Tags */
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Dropdown */
+
+.card__dropdown {
+  background: var(--drop-down-color);
+  border: 1px solid var(--card-box-shadow);
+
+  border-radius: 10px;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.card__dropdown > p {
+  margin: 0;
+  padding: 0.75rem 1rem;
+
+  color: var(--text-color);
+
+  cursor: pointer;
+
+  border-bottom: 1px solid var(--card-box-shadow);
+
+  transition: background-color 0.2s ease;
+}
+
+.card__dropdown > p:last-child {
+  border-bottom: none;
+}
+
+.card__dropdown > p:hover {
+  background: var(--task-hover);
+}
+
+/* Footer */
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 4px;
+
+  border-top: 1px solid var(--card-box-shadow);
+}
+
+.card__footer > div {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card__footer svg {
+  width: 14px;
+  height: 14px;
+
+  color: var(--text-muted);
+}
+
+.card__footer span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Progress Bar */
+
+.card_progress {
+  width: 100%;
+  height: 7px;
+
+  margin-top: 4px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--card-box-shadow);
+}
+
+.card_progress_fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    var(--success),
+    var(--success-strong)
+  );
+
+  transition: width .35s ease;
+}
+
+/* Meta Information */
+
+.time,
+.task {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 3px 8px;
+
+  border-radius: 20px;
+
+  background: var(--task-hover);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .custom__card {
+    padding: 0.75rem;
+  }
+}

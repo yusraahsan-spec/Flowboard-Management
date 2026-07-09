@@ -1,0 +1,25 @@
+{
+  "name": "flowboard",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-datepicker": "^9.1.0",
+    "react-dom": "^18.0.0",
+    "react-feather": "^2.0.10",
+    "use-local-storage": "^2.3.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "vite": "^2.9.9"
+  }
+}

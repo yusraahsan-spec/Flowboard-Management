@@ -1,0 +1,80 @@
+/* App Layout */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--background-color);
+  background-image: radial-gradient(
+      circle at 0% 0%,
+      var(--accent-soft) 0%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 100% 15%, var(--accent-soft) 0%, transparent 40%);
+  background-attachment: fixed;
+  color: var(--text-color);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Main board wrapper */
+.app_outer {
+  flex: 1;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Board container */
+.app_boards {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  min-width: max-content;
+
+  padding: 1.75rem 2rem;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Editable Components */
+
+.add__board textarea {
+  min-height: 2.5rem;
+}
+
+.cardinfo__editable {
+  width: fit-content;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .app_boards {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

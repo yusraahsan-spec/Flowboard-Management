@@ -1,0 +1,219 @@
+/* Board Container */
+
+.board {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 300px;
+  max-height: 82vh;
+  flex-shrink: 0;
+
+  background: var(--board-color);
+  color: var(--text-color);
+
+  border: 1px solid var(--card-box-shadow);
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    box-shadow .25s ease,
+    transform .2s ease,
+    background-color .3s ease,
+    border-color .3s ease;
+}
+
+.board:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Colored accent strip on top of each column, cycling through a palette
+   so boards read as distinct at a glance, Trello-style. */
+.board::before {
+  content: "";
+  display: block;
+
+  height: 6px;
+  width: 100%;
+
+  background: var(--accent-gradient);
+}
+
+.app_boards > .board:nth-of-type(4n + 2)::before {
+  background: linear-gradient(135deg, #22c55e 0%, #0ea5e9 100%);
+}
+
+.app_boards > .board:nth-of-type(4n + 3)::before {
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+}
+
+.app_boards > .board:nth-of-type(4n + 4)::before {
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+}
+
+/* Board Header */
+
+.board__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.9rem 1rem;
+
+  border-bottom: 1px solid var(--card-box-shadow);
+}
+
+.board__top > div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.board__title {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.1px;
+
+  color: var(--text-color);
+}
+
+.board__title:hover {
+  opacity: 0.8;
+}
+
+.board__top svg {
+  color: var(--text-muted);
+
+  padding: 4px;
+  border-radius: 6px;
+
+  transition: all .2s ease;
+}
+
+.board__top svg:hover {
+  color: var(--text-color);
+  background: var(--task-hover);
+}
+
+/* Board Body */
+
+.board__cards {
+  flex: 1;
+
+  padding: 0.85rem;
+
+  overflow-y: auto;
+}
+
+/* Board Footer */
+
+.board__footer {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0.6rem 0.75rem 0.85rem;
+}
+
+/* Dropdown */
+
+.board__dropdown {
+  border-radius: 10px;
+
+  background: var(--card-color);
+  border: 1px solid var(--card-box-shadow);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.board__dropdown > p {
+  margin: 0;
+
+  padding: 12px 16px;
+
+  color: var(--text-color);
+
+  border-bottom: 1px solid var(--card-box-shadow);
+
+  cursor: pointer;
+
+  transition: background .2s ease;
+}
+
+.board__dropdown > p:hover {
+  background: var(--task-hover);
+}
+
+.board__dropdown > p:last-child {
+  border-bottom: none;
+}
+
+/* Board Title */
+
+.emoji {
+  margin-right: 0.5rem;
+}
+
+.total__cards {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 26px;
+  height: 26px;
+
+  margin-left: 8px;
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid transparent;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Editable Title */
+
+.title__input {
+  width: 100%;
+  height: 36px;
+
+  padding: 0 0.75rem;
+
+  border: 1px solid var(--card-box-shadow);
+  border-radius: 8px;
+
+  outline: none;
+
+  background: var(--card-color);
+  color: var(--text-color);
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: border-color 0.2s ease;
+}
+
+.title__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .board {
+    width: 280px;
+  }
+   .board__cards {
+    padding: .75rem;
+  }
+}
